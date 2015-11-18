@@ -2,6 +2,7 @@
 conf_jhipster.xml
 *.class
 *.iml
+.jhipster/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
