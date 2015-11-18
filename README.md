@@ -1,2 +1,2 @@
-# pack-angular
-Celerio code generation templates for Angular App (WORK IN PROGRESS)
+# Lab
+Celerio code generation templates demo for JHipster
