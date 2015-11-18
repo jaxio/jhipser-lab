@@ -1,0 +1,33 @@
+$output.file(".jhipster/${entity.model.type}.json")##
+{
+    "relationships": [
+## --------------- Many to One
+#foreach ($manyToOne in $entity.manyToOne.list)
+#if ($velocityCount > 1)
+        ,
+#end
+      {
+        "relationshipId": $velocityCount,
+        "relationshipName": "$manyToOne.to.var",
+        "otherEntityName": "$manyToOne.to.var",
+        "relationshipType": "many-to-one",
+        "otherEntityField": "$manyToOne.toEntity.primaryKey.var"
+      }
+#end
+    ],
+    "fields": [
+#foreach ($attribute in $entity.simpleAttributes.list)
+#if ($velocityCount > 1)
+        ,
+#end
+        {
+        "fieldId": $velocityCount,
+        "fieldName": "$attribute.var",
+        "fieldType": "$attribute.type"
+        }
+#end
+    ],
+    "changelogDate": "todo",
+    "dto": "no",
+    "pagination": "no"
+}

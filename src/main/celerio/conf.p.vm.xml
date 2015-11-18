@@ -1,7 +1,0 @@
-$output.file("conf_jhipster.xml")##
-<?xml version="1.0" encoding="UTF-8"?>
-<todo>
-#foreach ($entity in $project.withoutManyToManyJoinEntities.list)
-<entity>${entity.model.var}</entity>
-#end
-</todo>
