@@ -1,4 +1,7 @@
+.idea/
+conf_jhipster.xml
 *.class
+*.iml
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
