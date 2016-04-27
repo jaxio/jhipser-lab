@@ -1,0 +1,31 @@
+$output.webapp("i18n/en/${entity.model.var}.json")##
+{
+    "${configuration.applicationName}": {
+        "${entity.model.var}" : {
+            "home": {
+                "title": "${entity.model.varsUp}",
+                "createLabel": "Create a new ${entity.model.type}",
+                "createOrEditLabel": "Create or edit a ${entity.model.type}",
+                "search": "Search for ${entity.model.type}"
+            },
+            "created": "A new ${entity.model.type} is created with identifier {{ param }}",
+            "updated": "A ${entity.model.type} is updated with identifier {{ param }}",
+            "deleted": "A ${entity.model.type} is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete ${entity.model.type} {{ id }}?"
+            },
+            "detail": {
+                "title": "${entity.model.type}"
+            }
+#foreach($attribute in $entity.simpleAttributes.list)
+            , "$attribute.var": "$attribute.varUp"
+#end
+#foreach ($relation in $entity.xToOne.list)
+            ,"$relation.to.var": "$relation.to.varUp"
+#end
+#foreach ($relation in $entity.xToMany.list)
+            ,"$relation.to.vars": "$relation.to.varsUp"
+#end
+        }
+    }
+}

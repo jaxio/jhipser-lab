@@ -1,3 +1,4 @@
+$output.webapp("i18n/fr/global.json")##
 {
     "global": {
         "title": "Jhipavril",
@@ -7,8 +8,9 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entités",
-                "author": "Author",
-                "book": "Book",
+#foreach($entity in $project.withoutManyToManyJoinEntities.list)
+                "${entity.model.var}": "${entity.model.type}",
+#end
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
