@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <celerio xmlns="http://www.jaxio.com/schema/celerio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://www.jaxio.com/schema/celerio ./celerio.xsd">
-    <configuration rootPackage="com.jaxio.jhipsterlab" applicationName="jhipsterlab">
+    <configuration rootPackage="com.mycompany.myapp" applicationName="jhipavrilApp">
         <!-- Which tables are used for generation -->
         <tables>
             <!-- <table include="false" pattern="*_AUDIT"/> -->
@@ -23,4 +23,15 @@
         </dateMappings>
 
     </configuration>
+
+
+    <entityConfigs>
+        <entityConfig entityName="Book" tableName="BOOK">
+            <columnConfigs>
+                <columnConfig columnName="author_id">
+                    <manyToOneConfig var="author"/>
+                </columnConfig>
+            </columnConfigs>
+        </entityConfig>
+    </entityConfigs>
 </celerio>

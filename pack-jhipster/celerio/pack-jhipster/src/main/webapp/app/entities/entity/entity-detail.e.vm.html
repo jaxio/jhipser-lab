@@ -1,0 +1,32 @@
+$output.webapp("app/entities/${entity.model.var}/${entity.model.var}-detail.html")##
+#set($keyPrefix="${configuration.applicationName}.${entity.model.var}")##
+
+<div>
+    <h2><span translate="${keyPrefix}.detail.title">${entity.model.type}</span> {{vm.${entity.model.var}.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+#foreach($attribute in $entity.simpleAttributes.list)
+        <dt><span translate="${keyPrefix}.${attribute.var}">${attribute.varUp}</span></dt>
+        <dd>
+            <span>{{vm.${entity.model.var}.${attribute.var}}}</span>
+        </dd>
+        <hr>
+#end
+#foreach ($manyToOne in $entity.manyToOne.list)
+        <dt><span translate="${keyPrefix}.${manyToOne.to.var}">${manyToOne.to.type}</span></dt>
+        <dd>
+            <a ui-sref="${manyToOne.toEntity.model.var}-detail({id:vm.${entity.model.var}.${manyToOne.to.var}.id})">
+                {{vm.${entity.model.var}.${manyToOne.to.var}.id}}
+            </a>
+## TODO: just above, do not display id but a more friendly field ... but which one ?
+        </dd>
+        <hr>
+#end
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

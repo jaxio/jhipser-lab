@@ -1,0 +1,73 @@
+$output.webapp("app/entities/${entity.model.var}/${entity.model.vars}.html")##
+#set($keyPrefix="${configuration.applicationName}.${entity.model.var}")##
+<div>
+    <h2 translate="${keyPrefix}.home.title">${entity.model.varsUp}</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="${entity.model.var}.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="${keyPrefix}.home.createLabel">
+                        Create new ${entity.model.type}
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr>
+                <th><span translate="global.field.id">ID</span></th>
+#foreach ($attribute in $entity.searchAttributes.list)
+#if ($attribute.hasXToOneRelation())
+                <th><span translate="${keyPrefix}.$attribute.xToOneRelation.to.var">$attribute.xToOneRelation.to.varUp</span></th>
+#else
+                <th><span translate="${keyPrefix}.$attribute.var">$attribute.varUp</span></th>
+#end
+#end
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="${entity.model.var} in vm.${entity.model.vars} track by ${entity.model.var}.id">
+                <td><a ui-sref="${entity.model.var}-detail({id:${entity.model.var}.id})">{{${entity.model.var}.id}}</a></td>
+#foreach ($attribute in $entity.searchAttributes.list)
+#if ($attribute.hasXToOneRelation())
+                <td>
+## TODO: printer for linked entity (currently we display id...)
+                    <a ui-sref="${attribute.xToOneRelation.toEntity.model.var}-detail({id:${entity.model.var}.${attribute.xToOneRelation.to.var}.id})">{{${entity.model.var}.${attribute.xToOneRelation.to.var}.id}}</a>
+                </td>
+#else
+                <td>{{${attribute.fullVar}}}</td>
+#end
+#end
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="${entity.model.var}-detail({id:${entity.model.var}.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="${entity.model.var}.edit({id:${entity.model.var}.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="${entity.model.var}.delete({id:${entity.model.var}.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

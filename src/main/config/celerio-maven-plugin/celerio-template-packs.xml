@@ -9,8 +9,16 @@
 -->
 <celerio xmlns="http://www.jaxio.com/schema/celerio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jaxio.com/schema/celerio ./celerio.xsd">
 	<configuration>
+		<celerioTemplateContext>
+			<entityContextProperties>
+				<entityContextProperty property="deleteController" suffix="DeleteController"/>
+				<entityContextProperty property="detailController" suffix="DetailController"/>
+				<entityContextProperty property="dialogController" suffix="DialogController"/>
+			</entityContextProperties>
+		</celerioTemplateContext>
+
 		<packs>
-			<pack name="pack-custom" path="src/main/celerio" enable="true" />
+			<pack name="pack-jhipster" path="pack-jhipster" enable="true" />
 		</packs>
 	</configuration>
 </celerio>
