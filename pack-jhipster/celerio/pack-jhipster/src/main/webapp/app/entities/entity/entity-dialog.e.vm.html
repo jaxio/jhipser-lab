@@ -14,11 +14,23 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}-dialog.html
             <input type="text" class="form-control" id="id" name="id"
                    ng-model="vm.${entity.model.var}.id" readonly />
         </div>
+
 #foreach ($attribute in $entity.simpleAttributes.list)
+
         <div class="form-group">
             <label class="control-label" translate="${keyPrefix}.${attribute.var}" for="field_${attribute.var}">${attribute.varUp}</label>
+#if($attribute.isLocalDate())
+            <div class="input-group">
+                <input id="field_${attribute.var}" type="text" class="form-control" name="${attribute.var}" uib-datepicker-popup="{{dateformat}}" ng-model="vm.${attribute.fullVar}" is-open="vm.datePickerOpenStatus.${attribute.var}" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('${attribute.var}')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </div>
+#else
             <input type="${attribute.ajs.inputType}" class="form-control" name="${attribute.var}" id="field_${attribute.var}"
                    ng-model="vm.${attribute.fullVar}" ${attribute.ajs.required} />
+
+#end
             <div ng-show="editForm.${attribute.var}.${dollar}invalid">
 #if($attribute.isRequired())
                 <p class="help-block"

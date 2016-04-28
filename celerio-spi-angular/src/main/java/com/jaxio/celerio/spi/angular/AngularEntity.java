@@ -16,14 +16,16 @@
 package com.jaxio.celerio.spi.angular;
 
 import com.jaxio.celerio.model.Attribute;
+import com.jaxio.celerio.model.Entity;
 import com.jaxio.celerio.spi.AttributeSpi;
+import com.jaxio.celerio.spi.EntitySpi;
 
-public class AngularAttribute implements AttributeSpi {
+public class AngularEntity implements EntitySpi {
 
-    private Attribute attribute;
+    private Entity entity;
 
-    public void init(Attribute attribute) {
-        this.attribute = attribute;
+    public void init(Entity entity) {
+        this.entity = entity;
     }
 
     public String velocityVar() {
@@ -34,14 +36,12 @@ public class AngularAttribute implements AttributeSpi {
         return this;
     }
 
-    public String getInputType() {
-        if (attribute.isNumeric()) {
-            return "number";
+    public boolean hasLocalDateAttribute() {
+        for (Attribute attribute : entity.getAllAttributes().getList()) {
+            if (attribute.isLocalDate()) {
+                return true;
+            }
         }
-        return "text";
-    }
-
-    public String getRequired() {
-        return attribute.isRequired() ? "required" : "";
+        return false;
     }
 }

@@ -40,5 +40,22 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}-dialog.cont
         vm.clear = function() {
             ${dollar}uibModalInstance.dismiss('cancel');
         };
+
+#if($entity.hasDateAttribute())
+        vm.datePickerOpenStatus = {};
+#foreach($attribute in $entity.simpleAttributes.list)
+#if($attribute.isLocalDate())## TODO: ZonedDateTime
+        vm.datePickerOpenStatus.$attribute.var = false;
+#end
+#end
+#end
+
+## TODO: files etc..
+
+#if($entity.hasDateAttribute())
+            vm.openCalendar = function(date) {
+                vm.datePickerOpenStatus[date] = true;
+            };
+#end
     }
 })();

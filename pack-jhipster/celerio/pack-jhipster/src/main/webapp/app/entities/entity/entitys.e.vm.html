@@ -41,7 +41,13 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.vars}.html")##
                     <a ui-sref="${attribute.xToOneRelation.toEntity.model.var}-detail({id:${entity.model.var}.${attribute.xToOneRelation.to.var}.id})">{{${entity.model.var}.${attribute.xToOneRelation.to.var}.id}}</a>
                 </td>
 #else
+#if($attribute.isLocalDate())
+                <td>{{${attribute.fullVar} | date:'mediumDate'}}</td>
+#elseif($attribute.isDate())
+                <td>{{${attribute.fullVar} | date:'medium'}}</td>
+#else
                 <td>{{${attribute.fullVar}}}</td>
+#end
 #end
 #end
                 <td class="text-right">

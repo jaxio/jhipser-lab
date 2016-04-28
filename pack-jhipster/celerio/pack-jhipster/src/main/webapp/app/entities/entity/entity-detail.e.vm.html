@@ -8,7 +8,13 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}-detail.html
 #foreach($attribute in $entity.simpleAttributes.list)
         <dt><span translate="${keyPrefix}.${attribute.var}">${attribute.varUp}</span></dt>
         <dd>
-            <span>{{vm.${entity.model.var}.${attribute.var}}}</span>
+#if($attribute.isLocalDate())
+            <span>{{vm.${attribute.fullVar} | date:'mediumDate'}}</span>
+#elseif($attribute.isDate())
+            <span>{{vm.${attribute.fullVar} | date:'medium'}}</span>
+#else
+            <span>{{vm.${attribute.fullVar}}}</span>
+#end
         </dd>
         <hr>
 #end
