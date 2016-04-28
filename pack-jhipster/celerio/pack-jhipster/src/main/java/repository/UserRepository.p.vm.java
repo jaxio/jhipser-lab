@@ -1,6 +1,6 @@
-package com.mycompany.myapp.repository;
+$output.java($Repository, "UserRepository")
 
-import com.mycompany.myapp.domain.User;
+import ${Model.packageName}.User;
 
 import java.time.ZonedDateTime;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,7 +12,7 @@ import java.util.Optional;
 /**
  * Spring Data JPA repository for the User entity.
  */
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface $output.currentClass extends JpaRepository<User, Long> {
 
     Optional<User> findOneByActivationKey(String activationKey);
 

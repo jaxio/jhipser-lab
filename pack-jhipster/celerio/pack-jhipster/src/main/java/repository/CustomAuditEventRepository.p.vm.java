@@ -1,7 +1,7 @@
-package com.mycompany.myapp.repository;
+$output.java($Repository, "CustomAuditEventRepository")
 
-import com.mycompany.myapp.config.audit.AuditEventConverter;
-import com.mycompany.myapp.domain.PersistentAuditEvent;
+import ${Root.packageName}.config.audit.AuditEventConverter;
+import ${Model.packageName}.PersistentAuditEvent;
 
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.boot.actuate.audit.AuditEventRepository;
@@ -20,7 +20,7 @@ import java.util.List;
  * An implementation of Spring Boot's AuditEventRepository.
  */
 @Repository
-public class CustomAuditEventRepository implements AuditEventRepository {
+public class $output.currentClass implements AuditEventRepository {
 
     private static final String AUTHORIZATION_FAILURE = "AUTHORIZATION_FAILURE";
 

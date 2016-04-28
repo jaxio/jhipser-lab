@@ -1,6 +1,6 @@
-package com.mycompany.myapp.repository;
+$output.java($Repository, "PersistenceAuditEventRepository")
 
-import com.mycompany.myapp.domain.PersistentAuditEvent;
+import ${Model.packageName}.PersistentAuditEvent;
 
 import java.time.LocalDateTime;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Spring Data JPA repository for the PersistentAuditEvent entity.
  */
-public interface PersistenceAuditEventRepository extends JpaRepository<PersistentAuditEvent, Long> {
+public interface $output.currentClass extends JpaRepository<PersistentAuditEvent, Long> {
 
     List<PersistentAuditEvent> findByPrincipal(String principal);
 

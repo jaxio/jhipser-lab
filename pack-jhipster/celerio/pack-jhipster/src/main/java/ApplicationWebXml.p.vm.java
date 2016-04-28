@@ -1,6 +1,6 @@
-package com.mycompany.myapp;
+$output.java($Root, "ApplicationWebXml")##
 
-import com.mycompany.myapp.config.Constants;
+import ${Root.packageName}.config.Constants;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,14 +10,14 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 /**
  * This is a helper Java class that provides an alternative to creating a web.xml.
  */
-public class ApplicationWebXml extends SpringBootServletInitializer {
+public class $output.currentClass extends SpringBootServletInitializer {
 
     private final Logger log = LoggerFactory.getLogger(ApplicationWebXml.class);
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.profiles(addDefaultProfile())
-            .sources(JhipavrilApp.class);
+            .sources(Main.class);
     }
 
     /**

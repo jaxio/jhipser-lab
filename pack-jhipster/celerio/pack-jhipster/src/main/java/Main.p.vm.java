@@ -1,7 +1,7 @@
-package com.mycompany.myapp;
+$output.java($Root, "Main")##
 
-import com.mycompany.myapp.config.Constants;
-import com.mycompany.myapp.config.JHipsterProperties;
+import ${Root.packageName}.config.Constants;
+import ${Root.packageName}.config.JHipsterProperties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,9 +24,9 @@ import java.util.Collection;
 @ComponentScan
 @EnableAutoConfiguration(exclude = { MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class })
 @EnableConfigurationProperties({ JHipsterProperties.class, LiquibaseProperties.class })
-public class JhipavrilApp {
+public class $output.currentClass {
 
-    private static final Logger log = LoggerFactory.getLogger(JhipavrilApp.class);
+    private static final Logger log = LoggerFactory.getLogger(${output.currentClass}.class);
 
     @Inject
     private Environment env;
@@ -63,7 +63,7 @@ public class JhipavrilApp {
      * @throws UnknownHostException if the local host name could not be resolved into an address
      */
     public static void main(String[] args) throws UnknownHostException {
-        SpringApplication app = new SpringApplication(JhipavrilApp.class);
+        SpringApplication app = new SpringApplication(${output.currentClass}.class);
         SimpleCommandLinePropertySource source = new SimpleCommandLinePropertySource(args);
         addDefaultProfile(app, source);
         Environment env = app.run(args).getEnvironment();

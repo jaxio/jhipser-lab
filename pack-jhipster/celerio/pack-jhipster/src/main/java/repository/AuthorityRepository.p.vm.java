@@ -1,4 +1,4 @@
-package com.mycompany.myapp.repository;
+$output.java($Repository, "AuthorityRepository")
 
 import com.mycompany.myapp.domain.Authority;
 

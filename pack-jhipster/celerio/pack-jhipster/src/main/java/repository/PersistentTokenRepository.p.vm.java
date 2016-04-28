@@ -1,7 +1,8 @@
-package com.mycompany.myapp.repository;
+$output.java($Repository, "PersistentTokenRepository")
 
-import com.mycompany.myapp.domain.PersistentToken;
-import com.mycompany.myapp.domain.User;
+import ${Model.packageName}.PersistentToken;
+import ${Model.packageName}.User;
+
 import java.time.LocalDate;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -10,7 +11,7 @@ import java.util.List;
 /**
  * Spring Data JPA repository for the PersistentToken entity.
  */
-public interface PersistentTokenRepository extends JpaRepository<PersistentToken, String> {
+public interface $output.currentClass extends JpaRepository<PersistentToken, String> {
 
     List<PersistentToken> findByUser(User user);
 
