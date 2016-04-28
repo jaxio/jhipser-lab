@@ -1,3 +1,4 @@
+$output.webapp("index.html")
 <!doctype html>
 <html class="no-js">
 <head>
@@ -75,18 +76,14 @@
     <script src="app/account/reset/request/reset.request.controller.js"></script>
     <script src="app/account/reset/finish/reset.finish.state.js"></script>
     <script src="app/account/reset/finish/reset.finish.controller.js"></script>
-    <script src="app/entities/book/book.state.js"></script>
-    <script src="app/entities/book/book.service.js"></script>
-    <script src="app/entities/book/book.controller.js"></script>
-    <script src="app/entities/book/book-dialog.controller.js"></script>
-    <script src="app/entities/book/book-detail.controller.js"></script>
-    <script src="app/entities/book/book-delete-dialog.controller.js"></script>
-    <script src="app/entities/author/author.state.js"></script>
-    <script src="app/entities/author/author.service.js"></script>
-    <script src="app/entities/author/author.controller.js"></script>
-    <script src="app/entities/author/author-dialog.controller.js"></script>
-    <script src="app/entities/author/author-detail.controller.js"></script>
-    <script src="app/entities/author/author-delete-dialog.controller.js"></script>
+#foreach($entity in $project.withoutManyToManyJoinEntities.list)
+    <script src="app/entities/${entity.model.var}/${entity.model.var}.state.js"></script>
+    <script src="app/entities/${entity.model.var}/${entity.model.var}.service.js"></script>
+    <script src="app/entities/${entity.model.var}/${entity.model.var}.controller.js"></script>
+    <script src="app/entities/${entity.model.var}/${entity.model.var}-dialog.controller.js"></script>
+    <script src="app/entities/${entity.model.var}/${entity.model.var}-detail.controller.js"></script>
+    <script src="app/entities/${entity.model.var}/${entity.model.var}-delete-dialog.controller.js"></script>
+#end
     <script src="app/services/user/user.service.js"></script>
     <script src="app/services/auth/sessions.service.js"></script>
     <script src="app/services/auth/register.service.js"></script>
