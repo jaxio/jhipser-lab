@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .factory('notificationInterceptor', notificationInterceptor);
 
     notificationInterceptor.$inject = ['$q', 'AlertService'];

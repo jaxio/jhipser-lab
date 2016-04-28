@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .directive('hasAuthority', hasAuthority);
 
     function hasAuthority(Principal) {

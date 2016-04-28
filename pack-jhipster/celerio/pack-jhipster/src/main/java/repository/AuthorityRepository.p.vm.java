@@ -1,6 +1,6 @@
 $output.java($Repository, "AuthorityRepository")
 
-import com.mycompany.myapp.domain.Authority;
+import ${Model.packageName}.Authority;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

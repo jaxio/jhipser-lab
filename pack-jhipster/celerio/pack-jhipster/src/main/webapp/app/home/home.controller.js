@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .controller('HomeController', HomeController);
 
     HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];

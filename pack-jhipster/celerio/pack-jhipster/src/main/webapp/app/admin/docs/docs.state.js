@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .directive('jhSort', jhSort);
 
     function jhSort () {

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .factory('User', User);
 
     User.$inject = ['$resource'];

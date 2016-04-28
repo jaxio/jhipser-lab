@@ -3,7 +3,7 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}-dialog.cont
     'use strict';
 
     angular
-        .module('${configuration.applicationName}')
+        .module('mainApp')
         .controller('${entity.dialogController.type}', ${entity.dialogController.type});
 
     ${entity.dialogController.type}.${dollar}inject = ['${dollar}timeout', '${dollar}scope', '${dollar}stateParams', '${dollar}uibModalInstance', 'entity'#foreach($relatedEntity in $entity.meAndRelatedEntities.list), '${relatedEntity.model.type}'#{end}];
@@ -19,7 +19,7 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}-dialog.cont
         });
 
         var onSaveSuccess = function (result) {
-            ${dollar}scope.${dollar}emit('${configuration.applicationName}:${entity.model.var}Update', result);
+            ${dollar}scope.${dollar}emit('mainApp:${entity.model.var}Update', result);
             ${dollar}uibModalInstance.close(result);
             vm.isSaving = false;
         };

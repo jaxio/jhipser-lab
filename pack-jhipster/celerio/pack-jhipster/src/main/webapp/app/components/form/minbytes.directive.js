@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .directive('minbytes', minbytes);
 
     function minbytes () {

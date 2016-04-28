@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .factory('LogsService', LogsService);
 
     LogsService.$inject = ['$resource'];

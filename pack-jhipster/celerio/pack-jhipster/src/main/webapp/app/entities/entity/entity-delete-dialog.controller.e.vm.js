@@ -3,7 +3,7 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}-delete-dial
     'use strict';
 
     angular
-        .module('${configuration.applicationName}')
+        .module('mainApp')
         .controller('${entity.deleteController.type}',${entity.deleteController.type});
 
     ${entity.deleteController.type}.${dollar}inject = ['${dollar}uibModalInstance', 'entity', '${entity.model.type}'];

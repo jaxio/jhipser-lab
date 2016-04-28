@@ -2,7 +2,7 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}.service.js"
 (function() {
     'use strict';
     angular
-        .module('$configuration.applicationName')
+        .module('mainApp')
         .factory('${entity.model.type}', ${entity.model.type});
 
     ${entity.model.type}.${dollar}inject = ['${dollar}resource'];

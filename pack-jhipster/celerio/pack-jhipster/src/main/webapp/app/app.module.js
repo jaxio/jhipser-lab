@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp', [
+        .module('mainApp', [
             'ngStorage', 
             'tmh.dynamicLocale',
             'pascalprecht.translate', 

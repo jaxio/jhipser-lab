@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .constant('paginationConstants', {
             'itemsPerPage': 20
         });

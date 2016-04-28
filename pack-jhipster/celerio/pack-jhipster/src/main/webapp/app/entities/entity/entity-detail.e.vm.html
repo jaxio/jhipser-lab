@@ -1,5 +1,5 @@
 $output.webapp("app/entities/${entity.model.var}/${entity.model.var}-detail.html")##
-#set($keyPrefix="${configuration.applicationName}.${entity.model.var}")##
+#set($keyPrefix="mainApp.${entity.model.var}")##
 
 <div>
     <h2><span translate="${keyPrefix}.detail.title">${entity.model.type}</span> {{vm.${entity.model.var}.id}}</h2>

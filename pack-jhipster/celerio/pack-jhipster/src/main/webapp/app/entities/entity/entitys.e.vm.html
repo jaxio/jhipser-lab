@@ -1,5 +1,5 @@
 $output.webapp("app/entities/${entity.model.var}/${entity.model.vars}.html")##
-#set($keyPrefix="${configuration.applicationName}.${entity.model.var}")##
+#set($keyPrefix="mainApp.${entity.model.var}")##
 <div>
     <h2 translate="${keyPrefix}.home.title">${entity.model.varsUp}</h2>
     <jhi-alert></jhi-alert>

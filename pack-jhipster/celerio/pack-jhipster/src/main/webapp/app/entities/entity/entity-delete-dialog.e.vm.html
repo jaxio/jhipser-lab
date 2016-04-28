@@ -1,5 +1,5 @@
 $output.webapp("app/entities/${entity.model.var}/${entity.model.var}-delete-dialog.html")##
-#set($keyPrefix = "${configuration.applicationName}.${entity.model.var}")##
+#set($keyPrefix = "mainApp.${entity.model.var}")##
 
 <form name="deleteForm" ng-submit="vm.confirmDelete(vm.${entity.model.var}.id)">
     <div class="modal-header">

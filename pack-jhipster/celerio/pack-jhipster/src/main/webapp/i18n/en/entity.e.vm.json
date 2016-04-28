@@ -1,6 +1,6 @@
 $output.webapp("i18n/en/${entity.model.var}.json")##
 {
-    "${configuration.applicationName}": {
+    "mainApp": {
         "${entity.model.var}" : {
             "home": {
                 "title": "${entity.model.varsUp}",

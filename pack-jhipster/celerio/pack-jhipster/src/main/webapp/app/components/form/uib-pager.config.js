@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .config(pagerConfig);
 
     function pagerConfig(uibPagerConfig, paginationConstants) {

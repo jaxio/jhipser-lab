@@ -3,7 +3,7 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}.state.js")#
     'use strict';
 
     angular
-        .module('${configuration.applicationName}')
+        .module('mainApp')
         .config(stateConfig);
 
     stateConfig.${dollar}inject = ['${dollar}stateProvider'];
@@ -15,7 +15,7 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}.state.js")#
                 url: '/${entity.model.var}',
                 data: {
                     authorities: ['ROLE_USER'],
-                    pageTitle: '${configuration.applicationName}.${entity.model.var}.home.title'
+                    pageTitle: 'mainApp.${entity.model.var}.home.title'
                 },
                 views: {
                     'content@': {
@@ -37,7 +37,7 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}.state.js")#
                 url: '/${entity.model.var}/{id}',
                 data: {
                     authorities: ['ROLE_USER'],
-                    pageTitle: '${configuration.applicationName}.${entity.model.var}.detail.title'
+                    pageTitle: 'mainApp.${entity.model.var}.detail.title'
                 },
                 views: {
                     'content@': {

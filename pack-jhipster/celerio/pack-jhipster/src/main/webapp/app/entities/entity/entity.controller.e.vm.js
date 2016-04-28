@@ -3,7 +3,7 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}.controller.
     'use strict';
 
     angular
-        .module('$configuration.applicationName')
+        .module('mainApp')
         .controller('$entity.controller.type', ${entity.controller.type});
 
     ${entity.controller.type}.${dollar}inject = ['${dollar}scope', '${dollar}state', '$entity.model.type'];

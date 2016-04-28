@@ -14,6 +14,6 @@
     };
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .component('jhiItemCount', jhiItemCount);
 })();

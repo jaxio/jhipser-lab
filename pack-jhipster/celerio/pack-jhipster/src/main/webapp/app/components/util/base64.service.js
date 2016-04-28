@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('jhipavrilApp')
+        .module('mainApp')
         .factory('Base64', Base64);
 
     function Base64 () {
