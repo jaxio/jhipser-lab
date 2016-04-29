@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<celerioPack xmlns="http://www.jaxio.com/schema/celerio">
+    <packName value="pack-jhipster-static"/>
+    <packDescription value="Generate JDL file for JHipster project"/>
+    <packDescription2 value=""/>
+    <packCommand value="mvn -Pdb,metadata,gen generate-sources"/>
+    <packCommandHelp value=""/>
+    <projectLink value="https://github.com/jaxio/jhipster-lab"/>
+</celerioPack>

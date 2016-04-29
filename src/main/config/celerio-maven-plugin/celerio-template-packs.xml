@@ -19,6 +19,7 @@
 		</celerioTemplateContext>
 
 		<packs>
+			<pack name="pack-jhipster-static" path="pack-jhipster-static" enable="true" />
 			<pack name="pack-jhipster" path="pack-jhipster" enable="true" />
 		</packs>
 	</configuration>

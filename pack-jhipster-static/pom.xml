@@ -6,11 +6,11 @@
     </prerequisites>
 
     <groupId>com.jaxio.celerio.packs</groupId>
-    <artifactId>pack-jhipster</artifactId>
+    <artifactId>pack-jhipster-static</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>celerio pack-jhipster</name>
+    <name>celerio pack-jhipster-static</name>
     <url>https://github.com/jaxio/jhipster-lab</url>
     <description>
         Just a try to generate jhipster JDL from a database.
