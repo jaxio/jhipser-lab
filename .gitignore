@@ -4,6 +4,7 @@
 /target/www/**
 /celerio-spi-angular/target/**
 /pack-jhipster/target/**
+target
 
 ######################
 # Node
