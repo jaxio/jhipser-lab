@@ -5,22 +5,20 @@ Basic idea: try to generate a `jhipster like` application using Celerio instead 
 Many people ask for DB reverse engineering in JHipster and apparently 
 this is not so easy to do... whereas this is definitely a task Celerio can handle.
 
-`pack-jhipster`: Celerio Templates...
+## Celerio packs
 
-Note: only templates present in the folder `pack-jhipster/celerio/..../webapp/app/entities/` are really dynamic, all the
-other ones were simply copy pasted from a jhipster app.
-In this app, 2 entities were added using jhipster generators, so there are still some hard coded references to these entities,
-in particular in liquibase files.
+* `pack-jhipster`: Celerio dynamic Templates (interpreted by Celerio Engine)
 
-The dynamic templates offer basic support (not as good as jhipster for the moment), this is in progress, we need to support
-calendar, files, etc..
+* `pack-jhipster-static`: Celerio static Templates (copied as is without interpretation)
 
+* `src/main/config`: contains celerio conf
 
-`src/main/config`: contains celerio conf
+* `src/main/sql`: contains SQL script for jhipster tables + additional tables (Book, Author). You may add other tables...
 
-`src/main/sql`: contains SQL script for additional tables (Book, Author) that get reversed...
+## IMPORTANT NOTES
 
-IMPORTANT: jhipster uses liquibase (Celerio does not).
+The application does not rely on liquibase.
+The jhi_* tables are ignored by Celerio engine. So currently the additional tables cannot reference them.
 
 ## Install JS dep
 
@@ -31,11 +29,9 @@ IMPORTANT: jhipster uses liquibase (Celerio does not).
     cd celerio-spi-angular
     mvn clean install
 
-## Generate the application
+## Create/reverse the database + generate the application
 
     mvn -Pdb,metadata,gen generate-sources
-
-It will create an H2 database on disk, reverse it and execute the template above.
 
 ## Run the application
     
@@ -51,12 +47,11 @@ It will create an H2 database on disk, reverse it and execute the template above
 
 # TODOS:
 
-Urgent:
-* address issue with liquibase vs SQL Script
+* [done] address issue with liquibase vs SQL Script
 
 In webapp/app/entities templates:
 
-* support calendar
+* [done] support calendar
 * support file upload/download (blob)
 * support more validation
 * support more relations
@@ -65,6 +60,6 @@ In webapp/app/entities templates:
 * etc...
 
 Other templates:
-* support JPA entity
-* support resources
+* [done] support JPA entity
+* [done] support resources
 * etc...

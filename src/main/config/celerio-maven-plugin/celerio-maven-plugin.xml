@@ -5,7 +5,7 @@
         <!-- Which tables are used for generation -->
         <tables>
             <!-- <table include="false" pattern="*_AUDIT"/> -->
-            <table include="true" pattern="*"/>
+            <table include="false" pattern="jhi_*"/>
         </tables>
 
         <!-- global number mapping (optional) -->
