@@ -606,6 +606,7 @@
                         <mapstruct.defaultComponentModel>spring</mapstruct.defaultComponentModel>
                     </options>
                 </configuration>
+<!--
                 <executions>
                     <execution>
                         <id>process</id>
@@ -615,6 +616,7 @@
                         </goals>
                     </execution>
                 </executions>
+-->
                 <dependencies>
                     <dependency>
                         <groupId>org.mapstruct</groupId>
