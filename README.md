@@ -1,5 +1,7 @@
 ## JHipster Lab
 
+[![Build Status](https://travis-ci.org/jaxio/jhipser-lab.svg?branch=master)](https://travis-ci.org/jaxio/jhipser-lab)
+
 Basic idea: try to generate a `jhipster like` application using Celerio instead of JHipster.
 
 Many people ask for DB reverse engineering in JHipster and apparently 
