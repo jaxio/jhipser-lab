@@ -31,12 +31,14 @@ $output.webapp("app/layouts/navbar/navbar.html")##
                     </a>
                     <ul class="dropdown-menu" uib-dropdown-menu>
 #foreach($entity in $project.withoutManyToManyJoinEntities.list)
+#if(!$entity.isSkip())
                         <li ui-sref-active="active" >
                             <a ui-sref="${entity.model.var}" ng-click="vm.collapseNavbar()">
                                 <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
                                 <span translate="global.menu.entities.${entity.model.var}">${entity.model.type}</span>
                             </a>
                         </li>
+#end
 #end
                     </ul>
                 </li>

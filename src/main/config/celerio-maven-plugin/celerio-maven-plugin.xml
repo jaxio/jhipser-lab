@@ -5,7 +5,7 @@
         <!-- Which tables are used for generation -->
         <tables>
             <!-- <table include="false" pattern="*_AUDIT"/> -->
-            <table include="false" pattern="jhi_*"/>
+            <table include="false" pattern="jhi_persistent_*"/>
         </tables>
 
         <!-- global number mapping (optional) -->
@@ -18,7 +18,7 @@
         <!-- global date mapping (optional) -->
         <dateMappings>
             <!-- <dateMapping columnNameRegExp="VERSION" mappedType="M_UTILDATE"/> -->
-             <dateMapping columnJdbcType="TIMESTAMP" mappedType="M_LOCALDATETIME"/>
+            <dateMapping columnJdbcType="TIMESTAMP" mappedType="M_ZONEDDATETIME"/>
              <dateMapping columnJdbcType="DATE" mappedType="M_LOCALDATE"/>
         </dateMappings>
 
@@ -26,6 +26,10 @@
 
 
     <entityConfigs>
+        <entityConfig skip="true" entityName="User" tableName="jhi_user"/>
+        <entityConfig skip="true" entityName="Authority" tableName="jhi_authority"/>
+        <entityConfig skip="true" tableName="jhi_user_authority"/>
+
         <entityConfig entityName="Book" tableName="BOOK">
             <columnConfigs>
                 <columnConfig columnName="author_id">

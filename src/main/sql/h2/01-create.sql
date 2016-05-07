@@ -110,3 +110,19 @@ CREATE TABLE BOOK (
     constraint book_fk_1 foreign key (author_id) references AUTHOR,
     primary key (id)
 );
+
+
+CREATE TABLE SHELVE (
+    id                  int not null IDENTITY,
+    name                varchar(100),
+    user_id         int not null,
+    constraint shelve_user_id_fk foreign key (user_id) references jhi_user,
+    primary key (id)
+);
+
+
+CREATE TABLE VARIOUS (
+    id                  int not null IDENTITY,
+    zdt                 TIMESTAMP default now(),
+    primary key (id)
+);

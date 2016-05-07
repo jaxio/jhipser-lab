@@ -26,6 +26,14 @@ $output.webapp("app/entities/${entity.model.var}/${entity.model.var}-dialog.html
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('${attribute.var}')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
             </div>
+#elseif($attribute.isZonedDateTime())
+            <div class="input-group">
+                <input id="field_${attribute.var}" type="text" class="form-control" name="field_${attribute.var}" datetime-picker="{{dateformat}}" ng-model="vm.${attribute.fullVar}" is-open="vm.datePickerOpenStatus.${attribute.var}"/>
+## TODO               <%- include ng_validators %>  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('${attribute.var}')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </div>
 #else
             <input type="${attribute.ajs.inputType}" class="form-control" name="${attribute.var}" id="field_${attribute.var}"
                    ng-model="vm.${attribute.fullVar}" ${attribute.ajs.required} />

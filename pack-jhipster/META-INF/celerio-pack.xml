@@ -8,8 +8,10 @@
     <projectLink value="https://github.com/jaxio/jhipster-lab"/>
     <celerioTemplateContext>
         <entityContextProperties>
+            <entityContextProperty property="rest" subPackage="web.rest" suffix="Resource"/>
             <entityContextProperty property="deleteController" suffix="DeleteController"/>
             <entityContextProperty property="detailController" suffix="DetailController"/>
+            <entityContextProperty property="dialogController" suffix="DialogController"/>
         </entityContextProperties>
     </celerioTemplateContext>
 </celerioPack>

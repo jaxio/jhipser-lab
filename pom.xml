@@ -106,7 +106,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <celerio-maven-plugin.outputDir>${project.basedir}</celerio-maven-plugin.outputDir>
-        <celerio-maven-plugin.version>4.0.4</celerio-maven-plugin.version>
+        <celerio-maven-plugin.version>4.0.5</celerio-maven-plugin.version>
 
         <!-- END OF CELERIO RELATED PROPERTIES -->
     </properties>
